@@ -4,8 +4,8 @@ class Solution {
         
         String num = Integer.toString(x);
         int numLength = num.length();
+        
         char[] nums = new char[numLength];
-        boolean check = false;
         
         // -가 있거나, 첫번째와 마지막숫자가 다를 경우 즉시 false 리턴하고 x가 한자리 일경우 true 리턴
         if( x < 0 ){
@@ -29,10 +29,11 @@ class Solution {
         // 글자수가 짝수인 경우 가운데가 같지 않다면 즉시 false 리턴
         if (numLength/2 == 0) {
             if (nums[mid-1] != nums[mid]){
-                return check;
+                return false;
             }
         }
         
+        boolean check = false;
         for(int i = 0; i < mid; i++){
             if(nums[left] == nums[right]){
                 left++;
